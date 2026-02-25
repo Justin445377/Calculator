@@ -16,7 +16,7 @@ function calculate() {
     try {
         // eslint-disable-next-line no-eval
         const result = eval(display.value.replace(/÷/g, '/').replace(/×/g, '*'));
-        if (result === 42) {
+        if (Number(result) === 42 || result === '42') {
             display.value = '42 – Antwort auf alles!';
             setTimeout(() => {
                 display.value = '42';
