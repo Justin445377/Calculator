@@ -1,3 +1,18 @@
+/* Animierter Gold-Glanz für Titel */
+h1 {
+    background: linear-gradient(90deg, #FFD700 30%, #fff 50%, #FFD700 70%);
+    background-size: 200% auto;
+    color: #FFD700;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2.5s linear infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 200% center; }
+    100% { background-position: 0% center; }
+}
 body {
     background: #000;
     font-family: Arial, sans-serif;
