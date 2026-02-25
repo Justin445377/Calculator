@@ -32,5 +32,10 @@ Calcolux ist ein moderner Taschenrechner, entwickelt als Testprojekt für Vibe C
 
 Öffne die index.html im Browser. Alle Funktionen sind direkt nutzbar. Der Footer enthält einen Link zum GitHub-Profil.
 
+## Demo
+
+Die Live-Demo ist unter folgender URL erreichbar:
+[https://calcolux.infinityfreeapp.com/](https://calcolux.infinityfreeapp.com/)
+
 ---
 **Dieses Projekt wurde als Test für Vibe Coding erstellt.**
