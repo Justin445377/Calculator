@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taschenrechner</title>
+    <title>Calcolux</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
+        <h1 style="color:#FFD700; text-align:center; margin-bottom:1rem; font-family:Arial,sans-serif;">Calcolux</h1>
         <input type="text" id="display" disabled>
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">⌫</button>
             <button onclick="toggleSign()">±</button>
             <button onclick="percent()">%</button>
+            <button onclick="sqrtFunc()">√</button>
+            <button onclick="sinFunc()">sin</button>
+            <button onclick="cosFunc()">cos</button>
+            <button onclick="tanFunc()">tan</button>
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>

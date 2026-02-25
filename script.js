@@ -59,3 +59,56 @@ function percent() {
         display.value = display.value.substring(0, start) + percentValue + display.value.substring(end);
     }
 }
+
+function sqrtFunc() {
+    if (display.value === '' || display.value === 'Fehler') return;
+    const match = display.value.match(/(\-?\d*\.?\d+)(?!.*\d)/);
+    if (match) {
+        const number = parseFloat(match[0]);
+        if (number < 0) {
+            display.value = 'Fehler';
+            return;
+        }
+        const sqrtValue = Math.sqrt(number).toString();
+        const start = match.index;
+        const end = start + match[0].length;
+        display.value = display.value.substring(0, start) + sqrtValue + display.value.substring(end);
+    }
+}
+
+function sinFunc() {
+    if (display.value === '' || display.value === 'Fehler') return;
+    const match = display.value.match(/(\-?\d*\.?\d+)(?!.*\d)/);
+    if (match) {
+        const number = parseFloat(match[0]);
+        // Umrechnung in Radiant
+        const sinValue = Math.sin(number * Math.PI / 180).toString();
+        const start = match.index;
+        const end = start + match[0].length;
+        display.value = display.value.substring(0, start) + sinValue + display.value.substring(end);
+    }
+}
+
+function cosFunc() {
+    if (display.value === '' || display.value === 'Fehler') return;
+    const match = display.value.match(/(\-?\d*\.?\d+)(?!.*\d)/);
+    if (match) {
+        const number = parseFloat(match[0]);
+        const cosValue = Math.cos(number * Math.PI / 180).toString();
+        const start = match.index;
+        const end = start + match[0].length;
+        display.value = display.value.substring(0, start) + cosValue + display.value.substring(end);
+    }
+}
+
+function tanFunc() {
+    if (display.value === '' || display.value === 'Fehler') return;
+    const match = display.value.match(/(\-?\d*\.?\d+)(?!.*\d)/);
+    if (match) {
+        const number = parseFloat(match[0]);
+        const tanValue = Math.tan(number * Math.PI / 180).toString();
+        const start = match.index;
+        const end = start + match[0].length;
+        display.value = display.value.substring(0, start) + tanValue + display.value.substring(end);
+    }
+}

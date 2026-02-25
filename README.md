@@ -1,2 +1,3 @@
-# Calculator
-Test for Vibe Coding
+# Calcolux
+
+Ein moderner Taschenrechner namens Calcolux, gebaut mit HTML, CSS und JavaScript.
