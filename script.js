@@ -15,7 +15,15 @@ function deleteLast() {
 function calculate() {
     try {
         // eslint-disable-next-line no-eval
-        display.value = eval(display.value.replace(/÷/g, '/').replace(/×/g, '*'));
+        const result = eval(display.value.replace(/÷/g, '/').replace(/×/g, '*'));
+        if (result === 42) {
+            display.value = '42 – Antwort auf alles!';
+            setTimeout(() => {
+                display.value = '42';
+            }, 2000);
+        } else {
+            display.value = result;
+        }
     } catch {
         display.value = 'Fehler';
     }
