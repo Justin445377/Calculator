@@ -8,39 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <h1 style="color:#FFD700; text-align:center; margin-bottom:1rem; font-family:Arial,sans-serif;">Calcolux</h1>
-        <input type="text" id="display" disabled>
+    <div id="retro-calc" class="calculator" style="background:#f4e2d8; border:2px solid #333; box-shadow:0 0 20px 2px #333;">
+        <h1 style="color:#333; text-align:center; margin-bottom:1rem; font-family:'Courier New',monospace; text-shadow:1px 1px 0 #fff;">RetroCalc</h1>
+        <input type="text" id="retro-display" disabled style="background:#fffbe6; color:#333; border:1px solid #333;">
         <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">⌫</button>
-            <button onclick="toggleSign()">±</button>
-            <button onclick="percent()">%</button>
-            <button onclick="sqrtFunc()">√</button>
-            <button onclick="sinFunc()">sin</button>
-            <button onclick="cosFunc()">cos</button>
-            <button onclick="tanFunc()">tan</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('/')">÷</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('*')">×</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('-')">−</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="retroClearDisplay()">C</button>
+            <button onclick="retroDeleteLast()">⌫</button>
+            <button onclick="retroToggleSign()">±</button>
+            <button onclick="retroPercent()">%</button>
+            <button onclick="retroSqrtFunc()">√</button>
+            <button onclick="retroSinFunc()">sin</button>
+            <button onclick="retroCosFunc()">cos</button>
+            <button onclick="retroTanFunc()">tan</button>
+            <button onclick="retroAppendToDisplay('7')">7</button>
+            <button onclick="retroAppendToDisplay('8')">8</button>
+            <button onclick="retroAppendToDisplay('9')">9</button>
+            <button onclick="retroAppendToDisplay('/')">÷</button>
+            <button onclick="retroAppendToDisplay('4')">4</button>
+            <button onclick="retroAppendToDisplay('5')">5</button>
+            <button onclick="retroAppendToDisplay('6')">6</button>
+            <button onclick="retroAppendToDisplay('*')">×</button>
+            <button onclick="retroAppendToDisplay('1')">1</button>
+            <button onclick="retroAppendToDisplay('2')">2</button>
+            <button onclick="retroAppendToDisplay('3')">3</button>
+            <button onclick="retroAppendToDisplay('-')">−</button>
+            <button onclick="retroAppendToDisplay('0')">0</button>
+            <button onclick="retroAppendToDisplay('.')">.</button>
+            <button onclick="retroCalculate()">=</button>
+            <button onclick="retroAppendToDisplay('+')">+</button>
         </div>
         <footer style="margin-top:1.5rem; text-align:center;">
-            <a href="https://github.com/Justin445377?tab=repositories" target="_blank" style="color:#ff9500; text-decoration:none; font-size:1rem; display:inline-flex; align-items:center; gap:0.5rem;">
-                <img src="github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle;">GitHub Repo
-            </a>
+            <span style="color:#333; font-size:1rem;">Retro Version</span>
         </footer>
     </div>
     <script src="script.js"></script>
