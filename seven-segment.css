@@ -1,0 +1,23 @@
+/* 7-Segment Display Styles */
+.seven-segment {
+    display: inline-block;
+    font-size: 2.8rem;
+    font-weight: bold;
+    font-family: 'DSEG7Classic', monospace;
+    letter-spacing: 0.1em;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'DSEG7Classic';
+    src: url('https://cdn.jsdelivr.net/gh/keshikan/DSEG7-Font@master/DSEG7Classic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DSEG7Classic';
+    src: url('https://cdn.jsdelivr.net/gh/keshikan/DSEG7-Font@master/DSEG7Classic-Bold.ttf') format('truetype');
+    font-weight: bold;
+}

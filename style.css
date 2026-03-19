@@ -1,93 +1,157 @@
-/* Animierter Gold-Glanz für Titel */
-h1 {
-    background: linear-gradient(90deg, #FFD700 30%, #fff 50%, #FFD700 70%);
-    background-size: 200% auto;
-    color: #FFD700;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 2.5s linear infinite;
-}
-
-@keyframes shine {
-    0% { background-position: 200% center; }
-    100% { background-position: 0% center; }
-}
+/* Retro Hintergrund mit Animation */
 body {
-    background: #000;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: repeating-linear-gradient(135deg, #e2c9a0 0 20px, #f4e2d8 20px 40px);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Animierte Streifen im Hintergrund */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: repeating-linear-gradient(135deg, #ffe066 0 18px, transparent 18px 36px);
+    opacity: 0.35;
+    animation: retroBgMove 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes retroBgMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 120px 120px; }
+}
+
+/* Retro Titel Animation */
+h1 {
+    color: #333;
+    text-shadow: 2px 2px 0 #fff, 0 0 2px #333;
+    animation: retroTitlePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes retroTitlePulse {
+    0%, 100% { text-shadow: 2px 2px 0 #fff, 0 0 2px #333; }
+    50% { text-shadow: 2px 2px 0 #ffe066, 0 0 8px #ffe066; }
+}
+
+/* Rechner Container */
 .calculator {
-    background: #111;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 20px 2px #FFD700;
-    border: 2px solid #FFD700;
+    background: #f4e2d8;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 30px 2px #333, 0 0 0 8px #e2c9a0 inset;
+    border: 3px double #333;
     width: 320px;
+    position: relative;
+    z-index: 10;
+    animation: retroSlideIn 1s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
-#display {
+@keyframes retroSlideIn {
+    0% {
+        transform: translateY(-60px) scale(0.95);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10px) scale(1.03);
+        opacity: 0.8;
+    }
+    80% {
+        transform: translateY(-4px) scale(0.98);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Retro Display */
+#retro-display {
     width: 100%;
-    height: 3rem;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    height: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
     text-align: right;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    background: #222;
-    color: #FFD700;
-    border: 1px solid #FFD700;
+    border: 3px inset #333;
+    border-radius: 0.3rem;
+    padding: 0.8rem;
+    background: #ff0000;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.08em;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5), 0 0 20px #ff0000;
+    text-shadow: 0 0 3px #000;
+    display: block;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
+/* Retro Flash Effekt */
+.retro-flash {
+    animation: retroFlash 0.4s linear 1;
+}
+
+@keyframes retroFlash {
+    0% { background: #1a1a1a; color: #ff4444; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4444; }
+    20% { background: #0f0f0f; color: #ff0000; text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4444; }
+    40% { background: #1a1a1a; color: #ff4444; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4444; }
+    60% { background: #0f0f0f; color: #ff0000; text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4444; }
+    80% { background: #1a1a1a; color: #ff4444; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4444; }
+    100% { background: #1a1a1a; color: #ff4444; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4444; }
+}
+
+/* Button Grid */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
+/* Retro Buttons */
 button {
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     border: none;
-    border-radius: 0.5rem;
-    background: #222;
-    color: #FFD700;
-    border: 1px solid #FFD700;
+    border-radius: 0.4rem;
+    background: linear-gradient(180deg, #d4d4d4 0%, #bbb 100%);
+    color: #222;
+    border: 2px outset #ddd;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.1s;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.2), inset 1px 1px 0 #fff;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 button:hover {
-    background: #FFD700;
-    color: #111;
+    background: linear-gradient(180deg, #ddd 0%, #bbb 100%);
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.3), inset 1px 1px 0 #fff;
 }
 
 button:active {
-    background: #FFC300;
-    color: #111;
+    border-style: inset;
+    box-shadow: inset 2px 3px 5px rgba(0,0,0,0.2), inset -1px -1px 0 #fff;
+    transform: translateY(1px);
 }
 
-button:nth-child(3), button:nth-child(4), button:nth-child(8), button:nth-child(12), button:nth-child(16), button:nth-child(20) {
-    background: #FFD700;
-    color: #111;
-}
-
-/* Neue Buttons ± und % (jetzt 3. und 4. Button in der ersten Zeile) */
-button:nth-child(3), button:nth-child(4) {
-    background: #FFD700;
-    color: #111;
-}
-button:nth-child(3):hover, button:nth-child(4):hover {
-    background: #FFC300;
-}
-
-button:nth-child(3):hover, button:nth-child(4):hover, button:nth-child(8):hover, button:nth-child(12):hover, button:nth-child(16):hover, button:nth-child(20):hover {
-    background: #FFC300;
+/* Footer */
+footer {
+    text-align: center;
+    color: #333;
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
 }
